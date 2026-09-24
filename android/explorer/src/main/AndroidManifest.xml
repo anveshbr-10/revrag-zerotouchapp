@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- AppExplorer.kt writes screenshots/tree dumps to
+         Environment.getExternalStorageDirectory()/knowledge_pack/raw.
+         requestLegacyExternalStorage + maxSdkVersion=28/32 keep that working on
+         devices up to Android 12; on 13+ pull via `adb pull` still works but you
+         may need to grant storage access manually depending on OEM. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <application
+        android:label="AppExplorer host"
+        android:allowBackup="false"
+        android:requestLegacyExternalStorage="true">
+    </application>
+
+</manifest>

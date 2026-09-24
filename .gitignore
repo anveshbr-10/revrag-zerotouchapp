@@ -1,0 +1,69 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pydraw_backup.tar
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Generated project outputs
+knowledge_pack/perceived/
+knowledge_pack/raw/
+knowledge_pack/*.json
+knowledge_pack/*.html
+knowledge_pack/*.md
+knowledge_pack/**/*.png
+knowledge_pack/**/*.xml
+knowledge_pack/**/*.jsonl
+
+# Android / Gradle generated files
+android/.gradle/
+android/**/build/
+android/local.properties
+android/*.iml
+android/.idea/
+android/**/captures/
+android/**/intermediates/
+android/**/generated/
+android/**/tmp/
+android/**/out/
+android/**/*.log
+
+# Local runtime / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Optional: keep source docs and configs tracked
+!README.md
+!requirements.txt
+!run_pipeline.sh
+!android/**/build.gradle.kts
+!android/**/settings.gradle.kts
+!android/**/gradle.properties
+!android/gradlew
+!android/gradlew.bat
+!android/gradle/wrapper/gradle-wrapper.properties
+android/raw_backup.tar
