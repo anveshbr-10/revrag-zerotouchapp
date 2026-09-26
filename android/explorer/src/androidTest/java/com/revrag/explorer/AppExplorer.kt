@@ -107,7 +107,7 @@ class AppExplorer {
     // Synthesizer can reconstruct journeys (a graph of screens) after the fact.
     private val transitionsFile = File(outDir, "transitions.jsonl")
 
-    private val maxSteps = 50        // hard budget so exploration always terminates
+    private val maxSteps = 100          // hard budget so exploration always terminates
     private val stuckLimit = 3          // same hash this many times in a row -> back out
     private var consecutiveRepeats = 0
     private var lastHash: String? = null
@@ -243,6 +243,11 @@ class AppExplorer {
 
         val screenshotFile = File(screenDir, "screenshot_$stepCount.png")
         device.takeScreenshot(screenshotFile)
+
+        // Also save to sdcard for easy pulling
+        val sdcardPath = "/sdcard/knowledge_pack_screenshots/${state.hash}_$stepCount.png"
+        device.executeShellCommand("mkdir -p /sdcard/knowledge_pack_screenshots")
+        device.executeShellCommand("cp ${screenshotFile.absolutePath} $sdcardPath")
     }
 
     private fun tapElement(el: ElementInfo) {
