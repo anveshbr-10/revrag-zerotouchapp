@@ -243,6 +243,9 @@ class AppExplorer {
 
         val screenshotFile = File(screenDir, "screenshot_$stepCount.png")
         device.takeScreenshot(screenshotFile)
+        val sdcardDir = "/sdcard/knowledge_pack_screenshots"
+        device.executeShellCommand("mkdir -p $sdcardDir")
+        device.executeShellCommand("screencap -p $sdcardDir/${state.hash}.png")
 
         // Also save to sdcard for easy pulling
         val sdcardPath = "/sdcard/knowledge_pack_screenshots/${state.hash}_$stepCount.png"
